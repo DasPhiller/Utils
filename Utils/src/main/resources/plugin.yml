@@ -2,3 +2,7 @@ name: Utils
 version: 'Stable'
 main: de.philgamer.utils.Utils
 api-version: 1.17
+commands:
+  fly:
+
+  help:

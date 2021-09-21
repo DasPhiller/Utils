@@ -1,7 +1,11 @@
 package de.philgamer.utils;
 
+import de.philgamer.utils.commands.Fly;
+import de.philgamer.utils.commands.Help;
 import de.philgamer.utils.listener.ConnectionListener;
+import de.philgamer.utils.utils.CommandUtils;
 import de.philgamer.utils.utils.StringUtils;
+import net.dv8tion.jda.api.JDA;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.SimplePluginManager;
@@ -13,9 +17,12 @@ public final class Utils extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         PluginManager manager = (PluginManager) Bukkit.getPluginManager();
         stringUtils = new de.philgamer.utils.utils.StringUtils();
         manager.registerEvents(new ConnectionListener(), this);
+        this.getCommand("fly").setExecutor(new Fly());
+        this.getCommand("help").setExecutor(new Help());
     }
 
     @Override
@@ -26,4 +33,6 @@ public final class Utils extends JavaPlugin {
     public static StringUtils getStringUtils() {
         return stringUtils;
     }
+
+
 }
