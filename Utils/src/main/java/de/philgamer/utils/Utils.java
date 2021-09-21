@@ -17,7 +17,15 @@ public final class Utils extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        Bukkit.getConsoleSender().sendMessage(
+                "#     # ####### ### #        #####  \n" +
+                "#     #    #     #  #       #     # \n" +
+                "#     #    #     #  #       #       \n" +
+                "#     #    #     #  #        #####  \n" +
+                "#     #    #     #  #             # \n" +
+                "#     #    #     #  #       #     # \n" +
+                " #####     #    ### #######  ##### " + "\n" + "Plugin/Bukkit version" + Bukkit.getVersion() + "Minecraft Version: " +
+                        Bukkit.getMinecraftVersion());
         PluginManager manager = (PluginManager) Bukkit.getPluginManager();
         stringUtils = new de.philgamer.utils.utils.StringUtils();
         manager.registerEvents(new ConnectionListener(), this);
